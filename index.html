@@ -18,6 +18,11 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+    
+    <link rel="stylesheet" href="ammap/ammap.css" type="text/css">
+        <script src="ammap/ammap.js" type="text/javascript"></script>
+        <!-- map file should be included after ammap.js -->
+		<script src="ammap/maps/js/worldLow.js" type="text/javascript"></script>
   </head>
   <body>
   
@@ -50,8 +55,96 @@
         <h3>Awesome Superhero</h3>
         <p>I am a junior at University of Awesomeness. I draw, I code, I design, I dance, I hike. I simply love my life!</p>
         <!--<p><a href="#" class="btn btn-primary" role="button">Read more</a> </p>-->
+        <!--MAPPPPP-->
+       <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+  Places I served
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Places I've served at</h4>
       </div>
-      <button type="button" class="btn btn-default" aria-label="Left Align">
+      <div class="modal-body">
+        <script>
+			var map;
+
+			// svg path for target icon
+			var targetSVG = "M9,0C4.029,0,0,4.029,0,9s4.029,9,9,9s9-4.029,9-9S13.971,0,9,0z M9,15.93 c-3.83,0-6.93-3.1-6.93-6.93S5.17,2.07,9,2.07s6.93,3.1,6.93,6.93S12.83,15.93,9,15.93 M12.5,9c0,1.933-1.567,3.5-3.5,3.5S5.5,10.933,5.5,9S7.067,5.5,9,5.5 S12.5,7.067,12.5,9z";
+
+			AmCharts.ready(function() {
+			    map = new AmCharts.AmMap();
+
+
+			    map.imagesSettings = {
+			        rollOverColor: "#CC0000",
+			        rollOverScale: 3,
+			        selectedScale: 3,
+			        selectedColor: "#CC0000"
+			    };
+
+                      map.areasSettings = {
+                        outlineThickness:0.1
+                      };
+
+			    var dataProvider = {
+			        mapVar: AmCharts.maps.worldLow,
+			        images: [
+  						{svgPath:targetSVG, zoomLevel:5, scale:0.5, title:"Vienna", latitude:48.2092, longitude:16.3728},
+                        {svgPath:targetSVG, zoomLevel:5, scale:0.5, title:"London", latitude:51.5002, longitude:-0.1262},
+                        {svgPath:targetSVG, zoomLevel:5, scale:0.5, title:"Tunis", latitude:36.8117, longitude:10.1761}
+			        ]
+			    };
+			    map.dataProvider = dataProvider;
+
+			    map.objectList = new AmCharts.ObjectList("listdiv");
+			    map.showImagesInList = true;
+
+			    map.write("mapdiv");
+
+			});
+
+        </script>
+
+    <div>
+        <div id="listdiv" style="width:150px; overflow:auto; height:300px; float:left; background-color:#EEEEEE;"></div>
+        <div id="mapdiv" style="margin-right:150px; background-color:#EEEEEE; height: 300px; width: 400px"></div>
+    </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <!--<button type="button" class="btn btn-primary">Save changes</button>-->
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+      </div>
+
+
+
+
+
+
+
+
+    </div>
+
+
+    <ul class="list-group">
+      <li class="list-group-item">
+      <span class="badge">14</span>
+      Notification Center
+      </li>
+    </ul>
+    
+              <button type="button" class="btn btn-default" aria-label="Left Align">
   <span class="glyphicon glyphicon-link" aria-hidden="true"></span>
 </button>
 <button type="button" class="btn btn-default" aria-label="Left Align">
@@ -61,21 +154,25 @@
   <span class="glyphicon glyphicon-phone-alt" aria-hidden="true"></span>
 </button>
 
-
-
-
-
-
-
     </div>
-    <ul class="list-group">
-      <li class="list-group-item">
-      <span class="badge">14</span>
-      Notification Center
-      </li>
-    </ul>
 
-    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
   <div class="col-md-4 col-md-4">
   <div class="thumbnail">
