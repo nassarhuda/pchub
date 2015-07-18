@@ -3,3 +3,21 @@ body {
 	padding-right: 60px;
 	padding-left: 60px;
 }
+
+body {
+    background-color: #196D7C;
+}
+
+.row .thumbnail .caption{
+	background-color: #DAD8B8
+}
+
+.row .thumbnail .btn{
+	background-color: #AF581B
+
+}
+
+.row .thumbnail .btn{
+	border-color: #AF581B
+
+}
